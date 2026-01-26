@@ -24,11 +24,13 @@ namespace Mentorship.Api.Controllers
             var program = await _program.GetOne(id);
             return Ok(program);
         }
+        [HttpPatch("id")]
         public async Task<IActionResult> UpdateProgram(int id, [FromBody] UpdateProgramDto programDto )
         {
             var updatedProgram = await _program.UpdateMentorshipProgram(id, programDto);
             return Ok(updatedProgram);
         }
+        [HttpDelete("id")]
          public async Task<IActionResult> DeleteProgram(int id)
         {
             var program = await _program.DeleteProgram(id);
