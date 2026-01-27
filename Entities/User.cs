@@ -29,7 +29,8 @@ public class User
     //relationship
     public int ProgramId{get; set;}
     public MentorshipProgram? MentorshipProgram{get; set;}
-     public ICollection<UserSkill>? UserSkills{get; set;}
+    public ICollection<UserSkill>? UserSkills{get; set;}
+    public ICollection<Session>? SessionAttendee{get; set;}
 
 
     

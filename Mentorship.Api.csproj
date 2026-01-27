@@ -20,6 +20,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Dtos\" />
     <Folder Include="Dtos\Programs\" />
+    <Folder Include="Dtos\Session\" />
     <Folder Include="Dtos\Skills\" />
     <Folder Include="Dtos\Users\" />
     <Folder Include="Enums\" />

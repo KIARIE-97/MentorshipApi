@@ -10,4 +10,5 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext (o
     public DbSet<User> Users {get; set;}
     public DbSet<MentorshipProgram> Programs {get; set;}
     public DbSet<Skill> Skills{get; set;}
+    public DbSet<Session> Sessions{get;set;}
 }

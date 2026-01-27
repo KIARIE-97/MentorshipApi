@@ -10,6 +10,7 @@ public class MentorshipProgram
      public DateOnly Start {get; set;}
      public DateOnly? End {get; set;}
     public DateTime CreatedAt {get; set;}
-    
+    //relationships
     public User? User{get; set;}
+    public ICollection<Session>? Sessions{get;set;}
 }
