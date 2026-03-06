@@ -13,22 +13,22 @@ public class MentorshipProgramRepository(AppDbContext context) : IMentorshipProg
     public async Task<MentorshipProgram?> GetByIdAsync( int id)
     {
         return await _context.Programs
-        .Include(p => p.Sessions)
-        .Include(p => p.User)
+        // .Include(p => p.Sessions)
+        // .Include(p => p.User)
         .FirstOrDefaultAsync(p => p.Id == id);
     }
     public async  Task<IEnumerable<MentorshipProgram>> GetAllAsync()
     {
         return await _context.Programs
-        .Include(p => p.Sessions)
+        // .Include(p => p.Sessions)
         .OrderByDescending(p => p.CreatedAt)
         .ToListAsync();
     }
     public async Task<IEnumerable<MentorshipProgram>> GetByUserAsync(int userId)
     {
         return await _context.Programs
-            .Where(p => p.UserId == userId)
-            .Include(p => p.Sessions)
+            // .Where(p => p.UserId == userId)
+            // .Include(p => p.Sessions)
             .ToListAsync();
     }
       public async Task<bool> ExistsAsync(int id)

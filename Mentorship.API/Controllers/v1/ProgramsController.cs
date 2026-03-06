@@ -39,14 +39,14 @@ namespace Mentorship.API.Controllers.v1;
         return Ok(result);
     }
 
-    [HttpGet]
-    [ProducesResponseType(typeof(IEnumerable<ProgramResponse>), StatusCodes.Status200OK)]
-    public async Task<ActionResult<IEnumerable<ProgramResponse>>> GetAll()
-    {
-        var query = new GetAllProgramsQuery(); // You'll need to create this
-        var result = await _mediator.Send(query);
-        return Ok(result);
-    }
+    // [HttpGet]
+    // [ProducesResponseType(typeof(IEnumerable<ProgramResponse>), StatusCodes.Status200OK)]
+    // public async Task<ActionResult<IEnumerable<ProgramResponse>>> GetAll()
+    // {
+    //     var query = new GetAllProgramsQuery(); // You'll need to create this
+    //     var result = await _mediator.Send(query);
+    //     return Ok(result);
+    // }
 
 }
 

@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "uBuTZ6udBuA=",
+  "dgSpecHash": "sX7b3vLlP/I=",
   "success": true,
   "projectFilePath": "C:\\Users\\zarrah\\Desktop\\projects\\Mentorship\\Mentorship.API\\Mentorship.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zarrah\\.nuget\\packages\\mediatr\\14.1.0\\mediatr.14.1.0.nupkg.sha512",
     "C:\\Users\\zarrah\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\zarrah\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\zarrah\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
+    "C:\\Users\\zarrah\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",
     "C:\\Users\\zarrah\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.24\\microsoft.aspnetcore.openapi.8.0.24.nupkg.sha512",
     "C:\\Users\\zarrah\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.1\\microsoft.entityframeworkcore.9.0.1.nupkg.sha512",
     "C:\\Users\\zarrah\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.1\\microsoft.entityframeworkcore.abstractions.9.0.1.nupkg.sha512",
