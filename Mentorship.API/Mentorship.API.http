@@ -1,6 +1,18 @@
-@Mentorship.API_HostAddress = http://localhost:5011
+@Mentorship.API_Host = http://localhost:5011
 
-GET {{Mentorship.API_HostAddress}}/weatherforecast/
+GET http://localhost:5011/api/v1/programs
 Accept: application/json
 
+
 ###
+GET http://localhost:5011/api/v1/programs/1
+
+###
+POST http://localhost:5011/api/v1/programs
+Content-Type: application/json
+
+{
+    "Title": "ladiesmentorship",
+    "Description": "sisterhood yeeiy!",
+    "StartDate": "2026-03-28"
+}

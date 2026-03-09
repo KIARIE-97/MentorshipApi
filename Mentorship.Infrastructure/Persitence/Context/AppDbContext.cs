@@ -11,4 +11,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext (o
     public DbSet<MentorshipProgram> Programs {get; set;}
     // public DbSet<Skill> Skills{get; set;}
     // public DbSet<Session> Sessions{get;set;}
+     protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+        base.OnModelCreating(modelBuilder);
+    }
 }

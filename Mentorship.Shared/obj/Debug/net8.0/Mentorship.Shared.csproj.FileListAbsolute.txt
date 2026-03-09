@@ -1,0 +1,12 @@
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\bin\Debug\net8.0\Mentorship.Shared.deps.json
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\bin\Debug\net8.0\Mentorship.Shared.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\bin\Debug\net8.0\Mentorship.Shared.pdb
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.AssemblyInfoInputs.cache
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.AssemblyInfo.cs
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.csproj.CoreCompileInputs.cache
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.sourcelink.json
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\refint\Mentorship.Shared.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\Mentorship.Shared.pdb
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Shared\obj\Debug\net8.0\ref\Mentorship.Shared.dll

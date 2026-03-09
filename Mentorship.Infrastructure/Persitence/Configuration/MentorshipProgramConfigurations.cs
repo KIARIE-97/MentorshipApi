@@ -21,8 +21,7 @@ public class MentorshipProgramConfigurations :IEntityTypeConfiguration<Mentorshi
             .HasMaxLength(2000);
             
         builder.Property(p => p.CreatedAt)
-            .HasDefaultValueSql("GETUTCDATE()");
-            
+            .HasDefaultValueSql("NOW() AT TIME ZONE 'UTC'");            
         // Relationships
         // builder.HasOne(p => p.User)
         //     .WithMany()
