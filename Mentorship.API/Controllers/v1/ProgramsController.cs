@@ -1,8 +1,11 @@
 using MediatR;
 using Mentorship.Application.Features.Programs.Commands.CreateProgram;
-using Mentorship.Application.Features.Programs.Queries.GetProgram;
+using Mentorship.Application.Features.Programs.Queries.GetProgram.GetProgramById;
+using Mentorship.Application.Features.Programs.Queries.GetProgram.GetAllPrograms;
 using Mentorship.Shared.Contracts.v1.Programs;
 using Microsoft.AspNetCore.Mvc;
+using Mentorship.Application.Features.Programs.Commands.UpdateProgram;
+using Mentorship.Application.Features.Programs.Commands.DeleteProgram;
 
 namespace Mentorship.API.Controllers.v1;
 
@@ -39,14 +42,44 @@ namespace Mentorship.API.Controllers.v1;
         return Ok(result);
     }
 
-    // [HttpGet]
-    // [ProducesResponseType(typeof(IEnumerable<ProgramResponse>), StatusCodes.Status200OK)]
-    // public async Task<ActionResult<IEnumerable<ProgramResponse>>> GetAll()
-    // {
-    //     var query = new GetAllProgramsQuery(); // You'll need to create this
-    //     var result = await _mediator.Send(query);
-    //     return Ok(result);
-    // }
+    [HttpGet]
+    [ProducesResponseType(typeof(IEnumerable<ProgramResponse>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<IEnumerable<ProgramResponse>>> GetAll()
+    {
+        var query = new GetAllProgramsQuery(); // You'll need to create this
+        var result = await _mediator.Send(query);
+        return Ok(result);
+    }
 
+    [HttpPut("id")]
+    [ProducesResponseType(typeof(int), StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Update (int Id, UpdateProgramCommand command)
+    {
+        if(Id != command.Id)
+        {
+            return BadRequest("ID in URL does not match ID in command");
+        }
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("id")]
+    [ProducesResponseType(typeof(int), StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)] 
+    public async Task<IActionResult> Delete (int Id)
+    {
+        var command = new DeleteProgramCommand(Id);
+        
+        // Send through MediatR
+        var result = await _mediator.Send(command);
+        
+        // Return appropriate response
+        if (!result)
+        {
+            return NotFound($"Program with ID {Id} not found");
+        }
+        
+        return NoContent();    }
 }
 

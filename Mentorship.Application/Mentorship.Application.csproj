@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Programs\Queries\" />
-    <Folder Include="Features\Programs\Queries\GetProgram\" />
+    <Folder Include="Features\Programs\Commands\DeleteProgram\" />
+    <Folder Include="Features\Programs\Commands\UpdateProgram\" />
   </ItemGroup>
 
   <PropertyGroup>
