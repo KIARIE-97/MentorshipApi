@@ -51,12 +51,12 @@ namespace Mentorship.API.Controllers.v1;
         return Ok(result);
     }
 
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     [ProducesResponseType(typeof(int), StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Update (int Id, UpdateProgramCommand command)
+    public async Task<IActionResult> Update (int id, UpdateProgramCommand command)
     {
-        if(Id != command.Id)
+        if(id != command.Id)
         {
             return BadRequest("ID in URL does not match ID in command");
         }
@@ -64,12 +64,12 @@ namespace Mentorship.API.Controllers.v1;
         return NoContent();
     }
 
-    [HttpDelete("id")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(typeof(int), StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)] 
-    public async Task<IActionResult> Delete (int Id)
+    public async Task<IActionResult> Delete (int id)
     {
-        var command = new DeleteProgramCommand(Id);
+        var command = new DeleteProgramCommand(id);
         
         // Send through MediatR
         var result = await _mediator.Send(command);
@@ -77,7 +77,7 @@ namespace Mentorship.API.Controllers.v1;
         // Return appropriate response
         if (!result)
         {
-            return NotFound($"Program with ID {Id} not found");
+            return NotFound($"Program with ID {id} not found");
         }
         
         return NoContent();    }

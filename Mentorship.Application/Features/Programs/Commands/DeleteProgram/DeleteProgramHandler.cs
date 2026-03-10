@@ -10,7 +10,7 @@ public class DeleteProgramHandler(IMentorshipProgramRepository repository, IUnit
     private readonly IMentorshipProgramRepository _repository = repository;
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
-    public async Task<bool> Hanlde(DeleteProgramCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(DeleteProgramCommand request, CancellationToken cancellationToken)
     {
         var program = await _repository.GetByIdAsync(request.Id);
         if(program == null) return false;

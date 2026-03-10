@@ -7,10 +7,26 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//add layers
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Mentorship API",
+        Version = "v1",
+        Description = "API for managing mentorship programs",
+        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+        {
+            Name = "Support Team",
+            Email = "support@mentorship.com"
+        }
+    });
+});
 
 builder.Services.AddApiVersioning(config =>
 {
@@ -40,9 +56,6 @@ builder.Services.AddDbContext<AppDbContext>((options) =>
         });
 });
 
-//add layers
-builder.Services.AddApplication();
-builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
