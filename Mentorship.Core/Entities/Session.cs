@@ -37,7 +37,7 @@ public class Session
     }
 
     //behaviour methods
-    public void UpdateDetails (string title, string description, int durationMinutes, ESessionType sessionType)
+    public void UpdateDetails (string title, string description, int durationMinutes)
        {
         if (string.IsNullOrWhiteSpace(title))
             throw new DomainException("Program title is required");
@@ -45,12 +45,12 @@ public class Session
         Title = title;
         Description = description ?? string.Empty;
         DurationMinutes = durationMinutes;
-        Sessiontype = sessionType;
+        // Sessiontype = sessionType;
     }
     public void Reschedule( DateTime newScheduleTime)
     {
         if(newScheduleTime < DateTime.UtcNow) throw new DomainException("the new schedule time cannot be in the past");
         ScheduleAt = newScheduleTime;
     }
-
+    //sessiontype
 }
