@@ -13,7 +13,7 @@ public class MentorshipProgram
     //relationships
     public int userid {get; private set;}
     // public User? User{get; private set;}
-    // public IReadOnlyCollection<Session> Sessions => _session.AsReadOnly();
+    public IReadOnlyCollection<Session> Sessions => _session.AsReadOnly();
 
 
     //private constructor for ef core

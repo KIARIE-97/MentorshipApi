@@ -28,10 +28,10 @@ public class MentorshipProgramConfigurations :IEntityTypeConfiguration<Mentorshi
         //     .HasForeignKey(p => p.UserId)
         //     .OnDelete(DeleteBehavior.SetNull);
             
-        // builder.HasMany(p => p.Sessions)
-        //     .WithOne(s => s.Program)
-        //     .HasForeignKey(s => s.ProgramId)
-        //     .OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(p => p.Sessions)
+            .WithOne(s => s.Program)
+            .HasForeignKey(s => s.ProgramId)
+            .OnDelete(DeleteBehavior.Cascade);
             
         // Indexes for performance
         // builder.HasIndex(p => p.UserId);
