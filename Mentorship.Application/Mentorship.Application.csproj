@@ -13,6 +13,15 @@
   <ItemGroup>
     <Folder Include="Features\Programs\Commands\DeleteProgram\" />
     <Folder Include="Features\Programs\Commands\UpdateProgram\" />
+    <Folder Include="Features\Sessions\" />
+    <Folder Include="Features\Sessions\Commands\" />
+    <Folder Include="Features\Sessions\Commands\CreateSession\" />
+    <Folder Include="Features\Sessions\Commands\DeleteSession\" />
+    <Folder Include="Features\Sessions\Commands\UpdateSession\" />
+    <Folder Include="Features\Sessions\Queries\" />
+    <Folder Include="Features\Sessions\Queries\GetSession\" />
+    <Folder Include="Features\Sessions\Queries\GetSession\GetAllSessions\" />
+    <Folder Include="Features\Sessions\Queries\GetSession\GetSessionById\" />
   </ItemGroup>
 
   <PropertyGroup>

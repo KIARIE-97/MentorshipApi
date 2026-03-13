@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Mentorship.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Mentorship.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mentorship.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Mentorship.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Mentorship.Shared/Mentorship.Shared.csproj",
+      "msbuildProject": "../Mentorship.Shared/Mentorship.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Mentorship.Shared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\zarrah\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\zarrah\\Desktop\\projects\\Mentorship\\Mentorship.Shared\\Mentorship.Shared.csproj": {
+              "projectPath": "C:\\Users\\zarrah\\Desktop\\projects\\Mentorship\\Mentorship.Shared\\Mentorship.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -64,7 +87,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.418/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.419/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

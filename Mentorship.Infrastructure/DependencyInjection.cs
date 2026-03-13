@@ -1,5 +1,6 @@
 using System;
 using Mentorship.Api.Data;
+using Mentorship.Core.Entities;
 using Mentorship.Core.Interfaces;
 using Mentorship.Core.Interfaces.Repositories;
 using Mentorship.Infrastructure.Persitence;
@@ -24,6 +25,7 @@ public static class DependencyInjection
         
         // Register repositories
         services.AddScoped<IMentorshipProgramRepository, MentorshipProgramRepository>();
+        services.AddScoped<ISessionRepository, SessionRepository>();
         
         // Register Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();

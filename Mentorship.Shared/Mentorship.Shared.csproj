@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\v1\Sessions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mentorship.Core\Mentorship.Core.csproj" />
+  </ItemGroup>
+
 </Project>
