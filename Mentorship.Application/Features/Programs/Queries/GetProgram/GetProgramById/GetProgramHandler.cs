@@ -24,7 +24,7 @@ public class GetProgramHandler (IMentorshipProgramRepository repository) : IRequ
             StartDate = program.StartDate,
             EndDate = program.EndDate,
             CreatedAt = program.CreatedAt,
-            // SessionCount = program.Sessions.Count,
+            SessionCount = program.Sessions.Count,
             // UserId = program.UserId
         };
     }

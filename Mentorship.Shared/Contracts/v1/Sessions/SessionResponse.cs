@@ -11,5 +11,5 @@ public class SessionResponse
     public ESessionType Sessiontype;
     public DateTime ScheduleAt { get; set; }
     public int DurationMinutes { get; set; }
-    public int? ProgramId { get; set; }
+    public int ProgramId { get; set; }
 }

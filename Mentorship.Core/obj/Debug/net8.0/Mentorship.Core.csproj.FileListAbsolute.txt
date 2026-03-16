@@ -10,3 +10,7 @@ C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\Men
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\refint\Mentorship.Core.dll
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\Mentorship.Core.pdb
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\ref\Mentorship.Core.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\bin\Debug\net8.0\Mentorship.Shared.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\bin\Debug\net8.0\Mentorship.Shared.pdb
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\Mentorship.Core.csproj.AssemblyReference.cache
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.Core\obj\Debug\net8.0\Mentorsh.7DA4EC1B.Up2Date

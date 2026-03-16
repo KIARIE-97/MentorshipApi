@@ -22,7 +22,7 @@ public class GetAllProgramsHandler(IMentorshipProgramRepository repository): IRe
             StartDate = program.StartDate,
             EndDate = program.EndDate,
             CreatedAt = program.CreatedAt,
-            // SessionCount = program.Sessions.Count,
+            SessionCount = program.Sessions.Count,
             // UserId = program.UserId
         }).ToList();
     }

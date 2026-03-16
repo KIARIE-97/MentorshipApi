@@ -9,11 +9,11 @@ public class GetSessionHandler(ISessionRepository repository): IRequestHandler<G
 {
     private readonly ISessionRepository _repository = repository;
 
-     public async Task<SessionResponse?> Handle(GetSessionQuery request, CancellationToken cancellationToken)
+     public async Task<SessionResponse> Handle(GetSessionQuery request, CancellationToken cancellationToken)
     {
         var session = await _repository.GetByIdAsync(request.Id);
 
-        if(session == null) return null;
+        if(session == null) return null!;
 
         return new SessionResponse
         {

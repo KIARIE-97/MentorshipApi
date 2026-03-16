@@ -5,5 +5,5 @@ namespace Mentorship.Application.Features.Sessions.Queries.GetSession.GetSession
 
 public record class GetSessionQuery: IRequest<SessionResponse>
 {
-    public int Id{get; set;}
+    public int Id{get; init;}
 }

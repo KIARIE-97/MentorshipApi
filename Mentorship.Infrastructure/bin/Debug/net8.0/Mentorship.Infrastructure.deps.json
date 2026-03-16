@@ -824,6 +824,9 @@
         }
       },
       "Mentorship.Core/1.0.0": {
+        "dependencies": {
+          "Mentorship.Shared": "1.0.0"
+        },
         "runtime": {
           "Mentorship.Core.dll": {
             "assemblyVersion": "1.0.0",
