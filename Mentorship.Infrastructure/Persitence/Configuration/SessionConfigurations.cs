@@ -19,6 +19,7 @@ public class SessionConfigurations: IEntityTypeConfiguration<Session>
             
         builder.Property(p => p.Description)
             .HasMaxLength(2000);
+        
          builder.Property(s => s.Sessiontype)
             .IsRequired()
             .HasConversion<int>();  // Store enum as int in database

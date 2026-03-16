@@ -1,6 +1,5 @@
-using System;
+using Mentorship.Core.Enums;
 using Mentorship.Core.Exceptions;
-using Mentorship.Shared.Enums;
 
 namespace Mentorship.Core.Entities;
 
@@ -9,7 +8,7 @@ public class Session
     public int Id{get; private set;} 
     public string Title{get;private set;} = string.Empty;
     public string Description{get;private set;} = string.Empty;
-    public ESessionType Sessiontype = ESessionType.Online;
+    public ESessionType Sessiontype {get; private set;}
     public DateTime ScheduleAt{get;private set;}
     public int DurationMinutes { get; private set; }
     public int ProgramId { get; private set; }
@@ -19,12 +18,15 @@ public class Session
     private Session() {}
 
     public static Session Create(
-        string title, string description, DateTime scheduleAt, int durationMinutes, int programId, ESessionType sessionType
+        string title, string description, DateTime scheduleAt, int durationMinutes, int programId
     )
     {
         if(string.IsNullOrWhiteSpace(title)) throw new DomainException("session title is required");
         if(title.Length > 200) throw new DomainException("session title cannot exceed 200 characters");
         if(scheduleAt < DateTime.UtcNow) throw new DomainException("schedule time cannot be in the past");
+        if (durationMinutes < 15 || durationMinutes > 480)
+            throw new DomainException("Duration must be between 15 minutes and 8 hours");        
+        
         return new Session
         {
           Title = title,
@@ -32,7 +34,7 @@ public class Session
           ScheduleAt = scheduleAt,
           DurationMinutes= durationMinutes,
           ProgramId = programId,
-          Sessiontype = sessionType  
+          Sessiontype = ESessionType.Online  
         };
     }
 

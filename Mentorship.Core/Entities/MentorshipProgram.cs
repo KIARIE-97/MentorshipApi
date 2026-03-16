@@ -13,7 +13,8 @@ public class MentorshipProgram
     //relationships
     public int userid {get; private set;}
     // public User? User{get; private set;}
-    public IReadOnlyCollection<Session> Sessions => _session.AsReadOnly();
+    private readonly List<Session> _sessions = new();
+    public IReadOnlyCollection<Session> Sessions => _sessions.AsReadOnly();
 
 
     //private constructor for ef core
@@ -59,12 +60,35 @@ public class MentorshipProgram
         EndDate = endDate;
     }
     
-    // public void AddSession(Session session)
-    // {
-    //     // Business rule: No overlapping sessions
-    //     if (_sessions.Any(s => s.DateTime == session.DateTime))
-    //         throw new DomainException("A session already exists at this time");
+    public void AddSession(Session session)
+    {
+        // Business rule: No overlapping sessions
+        if (_sessions.Any(s => s.ScheduleAt == session.ScheduleAt))
+            throw new DomainException("A session already exists at this time");
+        if(session.ProgramId != Id && Id != 0) 
+            throw new DomainException("session belongs to a different program");    
             
-    //     _sessions.Add(session);
-    // }
+        _sessions.Add(session);
+    }
+    //remove session
+    public void RemoveSession(Session session)
+    {
+        if(!_sessions.Contains(session))
+            throw new DomainException("session not found in this program");
+        _sessions.Remove(session);    
+    }
+    //get upcoming sessions
+    public IReadOnlyCollection<Session> GetUpComingSessions()
+    {
+        return _sessions
+        .Where(s => s.ScheduleAt > DateTime.UtcNow)
+        .OrderBy(s=> s.ScheduleAt)
+        .ToList()
+        .AsReadOnly();
+    }
+    //check if program has sessions on a particular date
+    public bool HasSessionOnDate(DateOnly date)
+    {
+        return _sessions.Any(s => DateOnly.FromDateTime(s.ScheduleAt) == date);
+    }
 }

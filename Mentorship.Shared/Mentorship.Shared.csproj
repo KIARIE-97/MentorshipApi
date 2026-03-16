@@ -8,10 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Contracts\v1\Sessions\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mentorship.Core\Mentorship.Core.csproj" />
+    
   </ItemGroup>
 
 </Project>

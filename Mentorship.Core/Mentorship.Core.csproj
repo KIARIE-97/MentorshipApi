@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Mentorship.Shared\Mentorship.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+
 </Project>
