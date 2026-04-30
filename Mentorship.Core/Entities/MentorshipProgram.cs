@@ -16,6 +16,9 @@ public class MentorshipProgram
     private readonly List<Session> _sessions = new();
     public IReadOnlyCollection<Session> Sessions => _sessions.AsReadOnly();
 
+    private readonly List<Enrollment> _enrollment = new();
+    public IReadOnlyCollection<Enrollment> Enrollments => _enrollment.AsReadOnly();
+
 
     //private constructor for ef core
     private MentorshipProgram() {}
@@ -91,4 +94,18 @@ public class MentorshipProgram
     {
         return _sessions.Any(s => DateOnly.FromDateTime(s.ScheduleAt) == date);
     }
+// AddEnrollment, ActiveEnrollmentCount 
+    public void AddEnrollment(Enrollment enrollment)
+    {
+           if(enrollment.ProgramId != Id) 
+            throw new DomainException("enrollment belongs to a different program");
+
+        // Check if student already enrolled
+        if (_enrollment.Any(e => e.StudentId == enrollment.StudentId && e.IsActive))
+            throw new DomainException("Student already has active enrollment in this program");
+
+        _enrollment.Add(enrollment);
+    }
+    public int ActiveEnrollmentCount => _enrollment.Count(e => e.IsActive); 
+    
 }

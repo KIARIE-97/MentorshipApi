@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Enrollments\" />
+    <Folder Include="Features\Enrollments\Commands\" />
+    <Folder Include="Features\Enrollments\Queries\" />
     <Folder Include="Features\Programs\Commands\DeleteProgram\" />
     <Folder Include="Features\Programs\Commands\UpdateProgram\" />
     <Folder Include="Features\Sessions\" />
