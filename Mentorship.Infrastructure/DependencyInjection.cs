@@ -26,6 +26,7 @@ public static class DependencyInjection
         // Register repositories
         services.AddScoped<IMentorshipProgramRepository, MentorshipProgramRepository>();
         services.AddScoped<ISessionRepository, SessionRepository>();
+        services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
         
         // Register Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();

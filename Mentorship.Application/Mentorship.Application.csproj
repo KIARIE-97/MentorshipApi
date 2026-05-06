@@ -6,6 +6,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="mediatR" Version="14.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
   </ItemGroup>
@@ -13,7 +15,15 @@
   <ItemGroup>
     <Folder Include="Features\Enrollments\" />
     <Folder Include="Features\Enrollments\Commands\" />
+    <Folder Include="Features\Enrollments\Commands\CreateEnrollment\" />
+    <Folder Include="Features\Enrollments\Commands\UpdateEnrollment\" />
     <Folder Include="Features\Enrollments\Queries\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\CheckEnrollmentExists\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\GetActiveEnrollmentForStudent\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\GetActiveEnrollments\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\GetEnrollmentById\" />
+    <Folder Include="Features\Enrollments\Queries\GetEnrollment\GetEnrollmentsByProgram\" />
     <Folder Include="Features\Programs\Commands\DeleteProgram\" />
     <Folder Include="Features\Programs\Commands\UpdateProgram\" />
     <Folder Include="Features\Sessions\" />

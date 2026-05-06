@@ -20,7 +20,9 @@ public class EnrollmentRepository(AppDbContext context): IEnrollmentRepository
     {
          return await _context
         .Enrollments
+        .Include(e => e.Program)
         .Where(e => e.StudentId == id)
+        .OrderByDescending(e => e.EnrolledAt)
         .ToListAsync();
     }
      public async Task<IEnumerable<Enrollment>> GetByProgramIdAsync(int id)
@@ -28,12 +30,14 @@ public class EnrollmentRepository(AppDbContext context): IEnrollmentRepository
          return await _context
         .Enrollments
         .Where(e => e.ProgramId == id)
+        .OrderByDescending(e => e.EnrolledAt)
         .ToListAsync();
     }
     public async Task<IEnumerable<Enrollment>> GetActiveEnrollmentsAsync()
     {
          return await _context
          .Enrollments
+         .Include(e => e.Program)
          .Where(e => e.Status == Core.Enums.EnrollmentStatus.Active)
          .ToListAsync();
     }
@@ -42,10 +46,10 @@ public class EnrollmentRepository(AppDbContext context): IEnrollmentRepository
     {
         return await _context
         .Enrollments
+        .Include(e => e.Program)
         .FirstOrDefaultAsync(e => e.StudentId == studentId 
                             && e.ProgramId == programId 
                             && e.Status == Core.Enums.EnrollmentStatus.Active);
-
     }
     public async Task<Enrollment> AddAsync(Enrollment enrollment)
     {
