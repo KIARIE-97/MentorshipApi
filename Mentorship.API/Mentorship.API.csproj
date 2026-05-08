@@ -27,8 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Attributes\" />
     <Folder Include="Controller\" />
     <Folder Include="Entities\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

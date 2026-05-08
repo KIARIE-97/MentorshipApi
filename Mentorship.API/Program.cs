@@ -1,9 +1,12 @@
 using Mentorship.Api.Data;
+using Mentorship.API.Middleware;
+using Mentorship.API.Services;
 using Mentorship.Application;
 using Mentorship.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,6 +59,12 @@ builder.Services.AddDbContext<AppDbContext>((options) =>
         });
 });
 
+//redis config >>> idempotemcy
+builder.Services.AddSingleton<IConnectionMultiplexer> (sp => 
+        ConnectionMultiplexer.Connect(builder.Configuration["Redis:ConnectionString"])
+    );
+builder.Services.AddScoped<IIdempotencyService, RedisIdempotencyService>();
+
 
 var app = builder.Build();
 
@@ -66,6 +75,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<IdempotencyMiddleware>();
 app.UseHttpsRedirection();
 app.MapControllers();
 

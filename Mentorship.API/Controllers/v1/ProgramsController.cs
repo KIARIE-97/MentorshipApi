@@ -6,6 +6,7 @@ using Mentorship.Shared.Contracts.v1.Programs;
 using Microsoft.AspNetCore.Mvc;
 using Mentorship.Application.Features.Programs.Commands.UpdateProgram;
 using Mentorship.Application.Features.Programs.Commands.DeleteProgram;
+using Mentorship.API.Attributes;
 
 namespace Mentorship.API.Controllers.v1;
 
@@ -18,6 +19,7 @@ namespace Mentorship.API.Controllers.v1;
     
 
     [HttpPost]
+    [Idempotent("CreateProgram")]
     [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
        public async Task<ActionResult<int>> Create([FromBody] CreateProgramRequest request)
