@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mentorship.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf371dd412f4f3286b73071993bdef60b0d5ae6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f84cd419ddda5e7f4fbac618fd522898b0a926c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mentorship.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mentorship.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,14 +5,15 @@ using Mentorship.API.Services;
 
 namespace Mentorship.API.Middleware;
 
-public class IdempotencyMiddleware (RequestDelegate _next, IIdempotencyService _idempotencyService, ILogger<IdempotencyMiddleware> _logger)
+public class IdempotencyMiddleware (RequestDelegate next, IIdempotencyService idempotencyService, ILogger<IdempotencyMiddleware> logger)
 {
-    private readonly RequestDelegate next = _next;
-    private readonly IIdempotencyService idempotencyService = _idempotencyService;
-    private readonly ILogger<IdempotencyMiddleware> logger = _logger;
+    private readonly RequestDelegate _next = next;
+    private readonly IIdempotencyService _idempotencyService = idempotencyService;
+    private readonly ILogger<IdempotencyMiddleware> _logger = logger;
 
     public async Task InvokeAsync(HttpContext context)
     {
+         _logger.LogWarning("🔵 MIDDLEWARE INVOKED");
         //handle post ,put, patch
         if(context.Request.Method == HttpMethods.Post ||
             context.Request.Method == HttpMethods.Put ||
@@ -20,6 +21,10 @@ public class IdempotencyMiddleware (RequestDelegate _next, IIdempotencyService _
         )
         {
             var idempotencyKey = context.Request.Headers["idempotency-Key"].ToString();
+             if (string.IsNullOrEmpty(idempotencyKey))
+        {
+            idempotencyKey = $"auto-generated-{DateTime.UtcNow:yyyyMMdd-HHmmss}-{Guid.NewGuid()}";
+            _logger.LogWarning("⚠️ No Idempotency-Key header, auto-generated: {Key}", idempotencyKey);}
 
             if(!string.IsNullOrEmpty(idempotencyKey))
             {
@@ -59,7 +64,7 @@ public class IdempotencyMiddleware (RequestDelegate _next, IIdempotencyService _
                         operationType,
                         responseObject!,
                         context.Response.StatusCode,
-                        attribute.TtlSeconds
+                        attribute.TtlSeconds 
                     );
 
                     //copy message to original stream
