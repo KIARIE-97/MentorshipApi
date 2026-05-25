@@ -115,6 +115,8 @@ builder.Services.AddSingleton<IIdempotencyService, RedisIdempotencyService>();
 
 var app = builder.Build();
 
+app.MapGet("/", () => Results.Ok(new { message = "Mentorship API is running. Visit /swagger for documentation." }));
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
