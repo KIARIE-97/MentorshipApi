@@ -75,6 +75,8 @@ builder.Services.AddDbContext<AppDbContext>((options) =>
             // npgsqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "public");
         });
 });
+// "ConnectionStrings": {
+    // "DefaultConnection": "Host=ep-square-queen-apn2k7wq-pooler.c-7.us-east-1.aws.neon.tech; Database=neondb; Username=neondb_owner; Password=npg_e9EzyIHSKo6V; SSL Mode=VerifyFull; Channel Binding=Require;"
 
 //redis config >>> idempotemcy
 var redisConfig = new ConfigurationOptions
@@ -120,6 +122,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+  // Optional: still show Swagger but with production settings
+    app.UseSwagger();
+    app.UseSwaggerUI(c => 
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mentorship API V1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
 app.UseHttpsRedirection();

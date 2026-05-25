@@ -1,2 +1,6 @@
 # iwashere personal notes
 .iwashere/
+bin/
+obj/
+/publish
+app.zip

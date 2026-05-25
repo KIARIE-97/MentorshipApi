@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aPV1+tHzQVI=",
+  "dgSpecHash": "235teuRIsRA=",
   "success": true,
   "projectFilePath": "C:\\Users\\zarrah\\Desktop\\projects\\Mentorship\\Mentorship.Application\\Mentorship.Application.csproj",
   "expectedPackageFiles": [
@@ -24,8 +24,8 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 14.1.0 was resolved.",
-      "libraryId": "MediatR",
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.1 was resolved.",
+      "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"
       ]
@@ -34,8 +34,8 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.1 was resolved.",
-      "libraryId": "AutoMapper",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 14.1.0 was resolved.",
+      "libraryId": "MediatR",
       "targetGraphs": [
         "net8.0"
       ]
