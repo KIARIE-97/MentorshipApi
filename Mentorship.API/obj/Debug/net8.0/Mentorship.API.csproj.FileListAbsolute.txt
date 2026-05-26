@@ -162,3 +162,4 @@ C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.API\bin\Debug\net8.0\Auto
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.API\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.API\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\zarrah\Desktop\projects\Mentorship\Mentorship.API\bin\Debug\net8.0\appsettings.Production.json
